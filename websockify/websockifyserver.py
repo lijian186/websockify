@@ -227,10 +227,7 @@ class WebSockifyRequestHandler(WebSocketRequestHandler, SimpleHTTPRequestHandler
         except IndexError:
             pass
 
-        if is_ssl:
-            self.stype = "SSL/TLS (wss://)"
-        else:
-            self.stype = "Plain non-SSL (ws://)"
+        self.stype = "Plain non-SSL (ws://)"
 
         self.log_message("%s: %s WebSocket connection", client_addr,
                          self.stype)
